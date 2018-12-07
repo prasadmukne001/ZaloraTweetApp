@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".modules.tweet_view.TweetViewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_vector_arrow_left"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="Tweet"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>-->
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backImageView"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_vector_arrow_left"
+                android:tint="@color/colorPrimary" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/AppTheme"
+                app:title="Tweet"
+                app:titleTextColor="@color/black" />
+        </LinearLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/userImageView"
+                        android:layout_width="60sp"
+                        android:layout_height="60sp"
+                        android:layout_margin="10sp"
+                        android:src="@drawable/ic_directshare_single" />
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/userNameTextView"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:text="Prasad mukne"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/tweeterUsernameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="\@mukneprasad"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tweeterMessage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="test tweet"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/timeElapsedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:text="1h"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5sp"
+                    android:layout_marginTop="10sp"
+                    android:background="@color/grey" />
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20sp"
+                        android:layout_height="20sp"
+                        android:layout_marginRight="10sp"
+                        android:background="@drawable/ic_vector_bar_chart"
+                        android:tint="@color/grey" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="View Tweet Activity"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5sp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginLeft="20sp"
+                    android:padding="10sp">
+
+
+                    <ImageView
+                        android:id="@+id/commentTweetImageView"
+                        android:layout_width="0sp"
+                        android:layout_height="25sp"
+                        android:layout_weight="15"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/ic_vector_reply_stroke"
+                        android:tint="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/tweeterCommentsCount"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/replyTweetImageView"
+                        android:layout_width="0sp"
+                        android:layout_height="25sp"
+                        android:layout_weight="15"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/retweet_selector"
+                        android:tint="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/reTweetCount"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/likeTweetImageView"
+                        android:layout_width="0sp"
+                        android:layout_height="25sp"
+                        android:layout_weight="15"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/like_selector"
+                        android:tint="@color/grey" />
+                    <TextView
+                        android:id="@+id/tweeterLikesCount"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:layout_gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/shareTweetImageView"
+                        android:layout_width="0sp"
+                        android:layout_height="25sp"
+                        android:layout_weight="25"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/ic_vector_share_android"
+                        android:tint="@color/grey" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/moreOptionsTweetImageView"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginLeft="10sp"
+                android:src="@drawable/ic_chevron_default" />
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1sp"
+            android:background="@color/grey"/>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.5sp"
+        android:background="@color/grey" />
+
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/custom_progress_bar_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progressBar"
+        style="@style/AVLoadingIndicatorView.Large"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:visibility="visible"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallClipRotateMultipleIndicator" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="Loading Data"
+        android:textSize="18dp" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="Please Wait"
+        android:textSize="18dp" />
+
+</LinearLayout>
+
+
+    <!--
+    </RelativeLayout>-->

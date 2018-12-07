@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profileMenu"
+            android:icon="@drawable/ic_vector_person_stroke"
+            android:textSize="20sp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/listsMenu"
+            android:icon="@drawable/ic_vector_lists_stroke"
+            android:textSize="20sp"
+            android:title="Lists" />
+        <item
+            android:id="@+id/bookmarksMenu"
+            android:icon="@drawable/ic_vector_bookmark_stroke"
+            android:textSize="20sp"
+            android:title="Bookmarks" />
+        <item
+            android:id="@+id/momentsMenu"
+            android:icon="@drawable/ic_vector_lightning_stroke"
+            android:textSize="20sp"
+            android:title="Moments" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/settingsMenu"
+                android:textSize="20sp"
+                android:title="Settings and privacy" />
+            <item
+                android:id="@+id/helpMenu"
+                android:textSize="20sp"
+                android:title="Help Centre" />
+        </menu>
+    </item>
+
+</menu>

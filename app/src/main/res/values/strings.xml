@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Zalora Twit App</string>
+    <string name="app_name_splash">Zalora Twit App</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Prasad Mukne</string>
+    <string name="nav_header_subtitle">\@mukneprasad</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="allow_permission_message_splash">These permissions are mandatory for application t work. You need to allow them.</string>
+    <string name="permission_denied">Permission is Denied.</string>
+    <string name="draft_button">Drafts</string>
+    <string name="tweet_button">Tweet</string>
+    <string name="tweet_hint">What`s happening?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="link_tweet">Copy link to Tweet</string>
+    <string name="pin_profile">Pin to profile</string>
+    <string name="delete_tweet">Delete Tweet</string>
+
+    <string name="send_direct_msg">Send via Direct Message</string>
+    <string name="add_tweet_bookmark">Add Tweet to Bookmarks</string>
+    <string name="share_tweet_via">Share Tweet via</string>
+
+    <string name="invalid_tweet">Please Enter Valid Tweet Text with non empty and one word length less than 51</string>
+    <string name="empty_tweet">Enter text to Tweet</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_tweet">Welcome To Zalora Tweet App. \n No tweets are available. \n Start Tweeting now.</string>
+
+
+</resources>
