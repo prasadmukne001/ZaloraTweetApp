@@ -10,7 +10,6 @@
     android:orientation="vertical">
 
     <com.wang.avi.AVLoadingIndicatorView
-        android:id="@+id/progressBar"
         style="@style/AVLoadingIndicatorView.Large"
         android:layout_width="60dp"
         android:layout_height="60dp"

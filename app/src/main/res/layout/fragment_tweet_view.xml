@@ -90,7 +90,6 @@
 
 
                     <ImageView
-                        android:id="@+id/userImageView"
                         android:layout_width="60sp"
                         android:layout_height="60sp"
                         android:layout_margin="10sp"
@@ -209,7 +208,7 @@
                         android:layout_weight="15"
                         android:clickable="true"
                         android:focusable="true"
-                        android:scaleType="fitStart"
+                        android:scaleType="centerInside"
                         android:src="@drawable/retweet_selector"
                         android:tint="@color/grey" />
 
@@ -230,7 +229,7 @@
                         android:layout_weight="15"
                         android:clickable="true"
                         android:focusable="true"
-                        android:scaleType="fitStart"
+                        android:scaleType="centerInside"
                         android:src="@drawable/like_selector"
                         android:tint="@color/grey" />
                     <TextView
@@ -250,7 +249,7 @@
                         android:layout_weight="25"
                         android:clickable="true"
                         android:focusable="true"
-                        android:scaleType="fitStart"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_vector_share_android"
                         android:tint="@color/grey" />
                 </LinearLayout>

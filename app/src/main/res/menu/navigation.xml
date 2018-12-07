@@ -10,19 +10,16 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/navigationSearch"
         android:icon="@drawable/search_selector"
         android:title="Search"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/navigationNotifications"
         android:icon="@drawable/notification_selector"
         android:title="Notifications"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/navigationEmail"
         android:icon="@drawable/mail_selector"
         android:title="Messages"
         app:showAsAction="always" />

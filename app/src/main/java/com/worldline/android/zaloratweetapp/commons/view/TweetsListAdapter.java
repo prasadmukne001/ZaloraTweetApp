@@ -3,8 +3,13 @@ package com.worldline.android.zaloratweetapp.commons.view;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable.Callback;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,6 +24,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.ButterKnife;
@@ -32,6 +38,8 @@ import com.worldline.android.zaloratweetapp.utility.LoginMetaDataUtility;
 import com.worldline.android.zaloratweetapp.utility.ZaloraTweetUtility;
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.MyViewHolder>
 {
@@ -190,11 +198,31 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.My
 				{
 					tweetModel.setLikesCount("" + (Integer.parseInt(tweetModel.getLikesCount()) + 1));
 					holder.tweeterLikesCount.setText("" + (Integer.parseInt(tweetModel.getLikesCount())));
-					holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
-					holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+					//holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+					//holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+
+					holder.likeTweetImageView.setImageResource(android.R.color.transparent);
+					holder.likeTweetImageView.setBackgroundResource(R.drawable.heart);
+					final AnimationDrawable anim = (AnimationDrawable) holder.likeTweetImageView.getBackground();
+					int duration = 0;
+					for(int i = 0; i < anim.getNumberOfFrames(); i++){
+						duration += anim.getDuration(i);
+					}
+					anim.start();
+					Handler handler=new Handler();
+					handler.postDelayed(new Runnable()
+					{
+						@Override
+						public void run()
+						{
+							holder.likeTweetImageView.setBackgroundResource(android.R.color.transparent);
+							holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+							holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+						}
+					},duration);
+
 					updateDataInDatabase(tweetModel);
 				}
-
 			}
 		});
 		holder.replyTweetImageView.setOnClickListener(new OnClickListener()

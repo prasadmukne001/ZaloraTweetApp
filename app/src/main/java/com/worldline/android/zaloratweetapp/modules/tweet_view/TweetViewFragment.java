@@ -3,8 +3,10 @@ package com.worldline.android.zaloratweetapp.modules.tweet_view;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -157,8 +159,28 @@ public class TweetViewFragment extends Fragment implements OnClickListener
 					{
 						tweetModel.setLikesCount("" + (Integer.parseInt(tweetModel.getLikesCount()) + 1));
 						tweeterLikesCount.setText("" + (Integer.parseInt(tweetModel.getLikesCount())));
-						likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
-						likeTweetImageView.setColorFilter(ContextCompat.getColor(getActivity(), R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+						//likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+						//likeTweetImageView.setColorFilter(ContextCompat.getColor(getActivity(), R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+
+						likeTweetImageView.setImageResource(android.R.color.transparent);
+						likeTweetImageView.setBackgroundResource(R.drawable.heart);
+						AnimationDrawable anim = (AnimationDrawable) likeTweetImageView.getBackground();
+						int duration = 0;
+						for(int i = 0; i < anim.getNumberOfFrames(); i++){
+							duration += anim.getDuration(i);
+						}
+						anim.start();
+						Handler handler=new Handler();
+						handler.postDelayed(new Runnable()
+						{
+							@Override
+							public void run()
+							{
+								likeTweetImageView.setBackgroundResource(android.R.color.transparent);
+								likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+								likeTweetImageView.setColorFilter(ContextCompat.getColor(getActivity(), R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+							}
+						},duration);
 						updateDataInDatabase(tweetModel);
 					}
 					break;
