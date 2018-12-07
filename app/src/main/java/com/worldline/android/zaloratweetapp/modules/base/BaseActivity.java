@@ -90,10 +90,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 				{
 					fragment = new ComposeTweetFragment();
 				}
+				FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+				//fragmentTransaction.setCustomAnimations(R.anim.slide_in_up, R.anim.exit_to_left,R.anim.enter_from_left,R.anim.exit_to_right);
+
 				if (!fragment.isAdded())
 				{
-					getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_up, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
-					getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, fragment, TAG).addToBackStack(null).commit();
+					fragmentTransaction.setCustomAnimations(R.anim.slide_in_up, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+					fragmentTransaction.replace(R.id.mainFrameLayout, fragment, TAG).addToBackStack(null).commit();
 				}
 			}
 		});

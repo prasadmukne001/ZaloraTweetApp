@@ -268,6 +268,7 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.My
 					fragment.setArguments(bundle);
 				}
 				FragmentTransaction fragmentTransaction = ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
+				fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,R.anim.enter_from_left,R.anim.exit_to_right);
 				if (!fragment.isAdded())
 				{
 					fragmentTransaction.replace(R.id.mainFrameLayout, fragment, TAG).addToBackStack(null).commit();
