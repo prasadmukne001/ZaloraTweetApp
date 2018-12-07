@@ -144,6 +144,18 @@ public class HomeFragment extends Fragment implements ActionReader
 				{
 					tweetModelLinkedList.add(new Gson().fromJson(cursor.getString(cursor.getColumnIndex(SQLiteDatabaseManager.TWEET_COLUMN)), TweetModel.class));
 				}
+				cursor.close();
+				if(tweetModelLinkedList.size()==0)
+				{
+					try
+					{
+						Thread.sleep(500);
+					}
+					catch (InterruptedException e)
+					{
+						e.printStackTrace();
+					}
+				}
 				return tweetModelLinkedList;
 			}
 

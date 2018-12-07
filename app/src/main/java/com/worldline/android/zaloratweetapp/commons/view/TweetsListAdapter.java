@@ -196,32 +196,46 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.My
 			{
 				if (LoginMetaDataUtility.getLoggedInUserData().getDefaultUserData().getUsername().equals("Prasad Mukne") && Integer.parseInt(tweetModel.getLikesCount()) == 0)
 				{
-					tweetModel.setLikesCount("" + (Integer.parseInt(tweetModel.getLikesCount()) + 1));
-					holder.tweeterLikesCount.setText("" + (Integer.parseInt(tweetModel.getLikesCount())));
-					//holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
-					//holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
-
-					holder.likeTweetImageView.setImageResource(android.R.color.transparent);
-					holder.likeTweetImageView.setBackgroundResource(R.drawable.heart);
-					final AnimationDrawable anim = (AnimationDrawable) holder.likeTweetImageView.getBackground();
-					int duration = 0;
-					for(int i = 0; i < anim.getNumberOfFrames(); i++){
-						duration += anim.getDuration(i);
-					}
-					anim.start();
-					Handler handler=new Handler();
-					handler.postDelayed(new Runnable()
+					try
 					{
-						@Override
-						public void run()
-						{
-							holder.likeTweetImageView.setBackgroundResource(android.R.color.transparent);
-							holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
-							holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
-						}
-					},duration);
+						tweetModel.setLikesCount("" + (Integer.parseInt(tweetModel.getLikesCount()) + 1));
+						holder.tweeterLikesCount.setText("" + (Integer.parseInt(tweetModel.getLikesCount())));
+						//holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+						//holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
 
-					updateDataInDatabase(tweetModel);
+						holder.likeTweetImageView.setImageResource(android.R.color.transparent);
+						holder.likeTweetImageView.setBackgroundResource(R.drawable.heart);
+						final AnimationDrawable anim = (AnimationDrawable) holder.likeTweetImageView.getBackground();
+						int duration = 0;
+						for(int i = 0; i < anim.getNumberOfFrames(); i++){
+							duration += anim.getDuration(i);
+						}
+						anim.start();
+						Handler handler=new Handler();
+						handler.postDelayed(new Runnable()
+						{
+							@Override
+							public void run()
+							{
+								try
+								{
+									holder.likeTweetImageView.setBackgroundResource(android.R.color.transparent);
+									holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
+									holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+								}
+								catch (Exception e)
+								{
+									e.printStackTrace();
+								}
+							}
+						},duration);
+
+						updateDataInDatabase(tweetModel);
+					}
+					catch (NumberFormatException e)
+					{
+						e.printStackTrace();
+					}
 				}
 			}
 		});
