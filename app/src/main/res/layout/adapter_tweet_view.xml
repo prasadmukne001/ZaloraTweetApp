@@ -71,16 +71,15 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:padding="10sp">
+                android:layout_height="60sp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10sp">
 
 
                 <ImageView
                     android:id="@+id/commentTweetImageView"
-                    android:layout_width="0sp"
+                    android:layout_width="25sp"
                     android:layout_height="25sp"
-                    android:layout_weight="15"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="fitStart"
@@ -92,16 +91,15 @@
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
                     android:text="0"
                     android:textColor="@color/grey"
                     android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/replyTweetImageView"
-                    android:layout_width="0sp"
+                    android:layout_width="25sp"
                     android:layout_height="25sp"
-                    android:layout_weight="15"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
@@ -113,16 +111,15 @@
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
                     android:text="0"
                     android:textColor="@color/grey"
                     android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/likeTweetImageView"
-                    android:layout_width="0sp"
+                    android:layout_width="25sp"
                     android:layout_height="25sp"
-                    android:layout_weight="15"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"
@@ -133,16 +130,15 @@
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
                     android:text="0"
                     android:textColor="@color/grey"
                     android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/shareTweetImageView"
-                    android:layout_width="0sp"
+                    android:layout_width="25sp"
                     android:layout_height="25sp"
-                    android:layout_weight="25"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="centerInside"

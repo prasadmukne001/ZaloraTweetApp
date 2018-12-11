@@ -205,6 +205,8 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.My
 
 						holder.likeTweetImageView.setImageResource(android.R.color.transparent);
 						holder.likeTweetImageView.setBackgroundResource(R.drawable.heart);
+						holder.likeTweetImageView.getLayoutParams().height=(holder.likeTweetImageView.getLayoutParams().height*2);
+						holder.likeTweetImageView.getLayoutParams().width=(holder.likeTweetImageView.getLayoutParams().width*2);
 						final AnimationDrawable anim = (AnimationDrawable) holder.likeTweetImageView.getBackground();
 						int duration = 0;
 						for(int i = 0; i < anim.getNumberOfFrames(); i++){
@@ -219,6 +221,8 @@ public class TweetsListAdapter extends RecyclerView.Adapter<TweetsListAdapter.My
 							{
 								try
 								{
+									holder.likeTweetImageView.getLayoutParams().height=(holder.likeTweetImageView.getLayoutParams().height/2);
+									holder.likeTweetImageView.getLayoutParams().width=(holder.likeTweetImageView.getLayoutParams().width/2);
 									holder.likeTweetImageView.setBackgroundResource(android.R.color.transparent);
 									holder.likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
 									holder.likeTweetImageView.setColorFilter(ContextCompat.getColor(context, R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);

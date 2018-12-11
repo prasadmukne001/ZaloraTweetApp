@@ -163,6 +163,8 @@ public class TweetViewFragment extends Fragment implements OnClickListener
 							tweeterLikesCount.setText("" + (Integer.parseInt(tweetModel.getLikesCount())));
 							//likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
 							//likeTweetImageView.setColorFilter(ContextCompat.getColor(getActivity(), R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);
+							likeTweetImageView.getLayoutParams().height=(likeTweetImageView.getLayoutParams().height*2);
+							likeTweetImageView.getLayoutParams().width=(likeTweetImageView.getLayoutParams().width*2);
 
 							likeTweetImageView.setImageResource(android.R.color.transparent);
 							likeTweetImageView.setBackgroundResource(R.drawable.heart);
@@ -180,6 +182,8 @@ public class TweetViewFragment extends Fragment implements OnClickListener
 								{
 									try
 									{
+										likeTweetImageView.getLayoutParams().height=(likeTweetImageView.getLayoutParams().height/2);
+										likeTweetImageView.getLayoutParams().width=(likeTweetImageView.getLayoutParams().width/2);
 										likeTweetImageView.setBackgroundResource(android.R.color.transparent);
 										likeTweetImageView.setImageResource(R.drawable.ic_vector_heart);
 										likeTweetImageView.setColorFilter(ContextCompat.getColor(getActivity(), R.color.red), android.graphics.PorterDuff.Mode.SRC_IN);

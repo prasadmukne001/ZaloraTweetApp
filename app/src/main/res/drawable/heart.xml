@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
-    android:oneshot="true">
+    android:oneshot="true" >
     <item android:drawable="@drawable/heart_animation_detail_edge_60fps_00000" android:duration="50" />
     <item android:drawable="@drawable/heart_animation_detail_edge_60fps_00001" android:duration="50" />
     <item android:drawable="@drawable/heart_animation_detail_edge_60fps_00002" android:duration="50" />
